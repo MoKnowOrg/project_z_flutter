@@ -1,0 +1,6 @@
+{
+  "appTitle": "project_z_flutter",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
