@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          color: Colors.pink,
+          color: Color(0xFFFB375E),
           child: Center(
             child: FractionallySizedBox(
               widthFactor: 0.3,

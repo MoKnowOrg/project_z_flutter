@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_z_flutter/src/settings/settings_controller.dart';
+import 'package:project_z_flutter/src/views/auth/Login.dart';
 
 class OnboardingScreen extends StatefulWidget {
   final SettingsController settingsController;
@@ -11,7 +12,7 @@ class OnboardingScreen extends StatefulWidget {
       _OnboardingScreenState(settingsController: settingsController);
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _OnboardingScreenState extends State<OnboardingScreen> with TickerProviderStateMixin {
   _OnboardingScreenState({
     required this.settingsController,
   });
@@ -49,7 +50,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } else {
       // Navigate to the next screen or perform an action
       settingsController.onboardingCompleted = true;
-      Navigator.pushReplacementNamed(context, '/');
+      showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return LoginScreen();
+        },
+        isScrollControlled: true,
+        transitionAnimationController: AnimationController(
+          vsync: this,
+          duration: const Duration(milliseconds: 500),
+        ),
+      );
     }
   }
 
@@ -116,8 +127,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _currentIndex == index
-                        ? Colors.pink
-                        : Colors.grey,
+                        ? Color(0xFFFB375E)
+                        : Colors.grey[300],
                   ),
                 ),
               ),
@@ -128,7 +139,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.pink,
+                backgroundColor: Color(0xFFFB375E),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
