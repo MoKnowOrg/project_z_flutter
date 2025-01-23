@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:project_z_flutter/src/views/Onboarding.dart';
 import 'package:project_z_flutter/src/views/SplashScreen.dart';
 
 import 'views/Detail.dart';
@@ -53,8 +54,8 @@ class MyApp extends StatelessWidget {
               initialRoute: '/',
               routes: {
                 SettingsView.routeName: (context) => SettingsView(controller: settingsController),
-                Home.routeName: (context) => Home(),
                 Detail.routeName: (context) => Detail(),
+                Home.routeName: (context) => settingsController.onboardingCompleted ? Home() : OnboardingScreen(settingsController: settingsController),
               },
             ),
           )

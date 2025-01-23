@@ -13,6 +13,9 @@ class SettingsController with ChangeNotifier {
   // Make SettingsService a private variable so it is not used directly.
   final SettingsService _settingsService;
 
+  bool _onboardingCompleted = false;
+  bool get onboardingCompleted => _onboardingCompleted;
+
   // Make ThemeMode a private variable so it is not updated directly without
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
@@ -46,5 +49,13 @@ class SettingsController with ChangeNotifier {
     // Persist the changes to a local database or the internet using the
     // SettingService.
     await _settingsService.updateThemeMode(newThemeMode);
+  }
+
+  set onboardingCompleted(bool value) {
+    if (_onboardingCompleted != value) {
+      _onboardingCompleted = value;
+
+      notifyListeners();
+    }
   }
 }
