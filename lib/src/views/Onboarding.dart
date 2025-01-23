@@ -21,60 +21,132 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
 
-  final List<String> _corosalTexts = [
-    "Welcome to our app! Discover amazing features.",
-    "Stay connected with your friends and family.",
-    "Get started and enjoy the experience!"
+  final List<Map<String, String>> _onboardingData = [
+    {
+      "image": "assets/images/onboarding_1.png",
+      "title": "Find a service",
+      "subtitle": "Discover and book the best beauty services around you"
+    },
+    {
+      "image": "assets/images/onboarding_2.png",
+      "title": "Pick date and time",
+      "subtitle": "Found a business? Now select a day and time that suits you"
+    },
+    {
+      "image": "assets/images/onboarding_3.png",
+      "title": "Start booking",
+      "subtitle": "One button to confirm, and get ready to head off to your appointment"
+    },
   ];
 
   void _nextPage() {
-    if (_currentIndex < _corosalTexts.length - 1) {
+    if (_currentIndex < _onboardingData.length - 1) {
       _pageController.nextPage(
-          duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+          duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+      setState(() {
+        _currentIndex++;
+      });
     } else {
-      // Go to the next screen or perform an action
+      // Navigate to the next screen or perform an action
+      settingsController.onboardingCompleted = true;
+      Navigator.pushReplacementNamed(context, '/');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView.builder(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        itemCount: _corosalTexts.length,
-        itemBuilder: (context, index) {
-          return Column(
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              itemCount: _onboardingData.length,
+              itemBuilder: (context, index) {
+                final data = _onboardingData[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        data["image"] ?? '',
+                        width: 250,
+                        height: 250,
+                      ),
+                      const SizedBox(height: 40),
+                      Text(
+                        data["title"] ?? '',
+                        style: const TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        data["subtitle"]!,
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          color: Colors.grey,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                _corosalTexts[index],
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
+            children: List.generate(
+              _onboardingData.length,
+              (index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                child: Container(
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentIndex == index
+                        ? Colors.pink
+                        : Colors.grey,
+                  ),
+                ),
               ),
-              SizedBox(height: 20.0),
-              if (index == _corosalTexts.length - 1)
-                ElevatedButton(
-                  onPressed: () {
-                    // Start the app
-                    settingsController.onboardingCompleted = true;
-                    Navigator.pushReplacementNamed(context, '/');
-                  },
-                  child: Text("Start"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                backgroundColor: Colors.pink,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
                 ),
-              if (index < _corosalTexts.length - 1)
-                ElevatedButton(
-                  onPressed: _nextPage,
-                  child: Text("Next"),
-                ),
-            ],
-          );
-        },
+              ),
+              onPressed: () {
+                _nextPage();
+              },
+              child: Text(
+                _currentIndex == _onboardingData.length - 1
+                    ? "Start Booking"
+                    : "Next",
+                style: const TextStyle(fontSize: 18.0, color: Colors.white),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
