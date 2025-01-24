@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$12",
         "location": "89 Academy Street",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/salon.jpg",
         "discount": "Save up to 15%",
         "subcategories": ["Hair Treatments", "Blow Dry"]
       },
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$20",
         "location": "56 Park Avenue",
         "rating": 4.7,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/body.jpg",
         "discount": "Save up to 10%",
         "subcategories": ["Microblading", "Body Contouring"]
       },
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$18",
         "location": "23 High Street",
         "rating": 4.9,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/hair.jpg",
         "discount": "Save up to 20%",
         "subcategories": ["Haircuts", "Hair Color"]
       },
@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$25",
         "location": "12 Market Road",
         "rating": 4.6,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/face.jpg",
         "discount": "Save up to 15%",
         "subcategories": ["Facials", "Waxing"]
       },
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$15",
         "location": "34 Elm Street",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/nails.jpg",
         "discount": "Save up to 10%",
         "subcategories": ["Manicure", "Nail Art"]
       },
@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$30",
         "location": "78 King Street",
         "rating": 4.7,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/body.jpg",
         "discount": "Save up to 20%",
         "subcategories": ["Massage", "Body Scrub"]
       },
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$50",
         "location": "45 Queen Avenue",
         "rating": 4.9,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/dental.jpg",
         "discount": "Save up to 25%",
         "subcategories": ["Teeth Whitening", "Dental Cleaning"]
       },
@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$35",
         "location": "99 Sunset Boulevard",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/body.jpg",
         "discount": "Save up to 15%",
         "subcategories": ["Body Wrap", "Body Contouring"]
       },
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$22",
         "location": "67 Maple Lane",
         "rating": 4.7,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/face.jpg",
         "discount": "Save up to 10%",
         "subcategories": ["Eyelash Extensions", "Microblading"]
       },
@@ -155,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$28",
         "location": "88 Cedar Road",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/face.jpg",
         "discount": "Save up to 20%",
         "subcategories": ["Facials", "Body Scrub"]
       },
@@ -164,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$40",
         "location": "11 Greenway Avenue",
         "rating": 4.9,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/hair_2.jpg",
         "discount": "Save up to 30%",
         "subcategories": ["Hair Treatments", "Nail Extensions"]
       },
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$60",
         "location": "50 Tower Bridge Road",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/dental.jpg",
         "discount": "Save up to 15%",
         "subcategories": ["Dental Implants", "Braces"]
       },
@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$25",
         "location": "31 Rosewood Avenue",
         "rating": 4.6,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/salon.jpg",
         "discount": "Save up to 15%",
         "subcategories": ["Haircuts", "Blow Dry"]
       },
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$20",
         "location": "29 Orchid Lane",
         "rating": 4.7,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/nails.jpg",
         "discount": "Save up to 10%",
         "subcategories": ["Pedicure", "Nail Art"]
       },
@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
         "price": "\$35",
         "location": "14 Serenity Drive",
         "rating": 4.8,
-        "image": "assets/images/home_screen_image.png",
+        "image": "assets/icons/services/body.jpg",
         "discount": "Save up to 20%",
         "subcategories": ["Massage", "Body Wrap"]
       }
