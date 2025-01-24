@@ -146,13 +146,13 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     SocialLoginButton(
-                      iconPath: "assets/images/apple_logo.png",
+                      iconPath: "assets/icons/logos/apple_logo.png",
                       text: 'Continue with Apple',
                       onPressed: () {},
                     ),
                     const SizedBox(height: 10),
                     SocialLoginButton(
-                      iconPath: "assets/images/google_logo.png",
+                      iconPath: "assets/icons/logos/google_logo.png",
                       text: 'Continue with Google',
                       onPressed: () {},
                     ),

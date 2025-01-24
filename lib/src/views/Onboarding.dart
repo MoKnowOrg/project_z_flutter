@@ -51,6 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
       // Navigate to the next screen or perform an action
       settingsController.onboardingCompleted = true;
       showModalBottomSheet<void>(
+        showDragHandle: true,
         context: context,
         builder: (BuildContext context) {
           return LoginScreen();

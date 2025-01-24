@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/bottom_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,27 +16,56 @@ class _HomeScreenState extends State<HomeScreen> {
     "location": "81 School Lane",
     "city": "London, United Kingdom",
     "categories": [
-      {"icon": Icons.cut, "label": "Hair", "color": Colors.pinkAccent.shade200},
       {
-        "icon": Icons.face,
+        "icon": "assets/icons/categories/hair.png",
+        "label": "Hair",
+        "color": Colors.pinkAccent.shade200,
+        "subcategories": [
+          "Haircuts",
+          "Hair Color",
+          "Hair Treatments",
+          "Blow Dry"
+        ]
+      },
+      {
+        "icon": "assets/icons/categories/face.png",
         "label": "Face",
-        "color": Colors.orangeAccent.shade200
+        "color": Colors.orangeAccent.shade200,
+        "subcategories": [
+          "Facials",
+          "Waxing",
+          "Microblading",
+          "Eyelash Extensions"
+        ]
       },
       {
-        "icon": Icons.medical_services,
+        "icon": "assets/icons/categories/dental.png",
         "label": "Dental",
-        "color": Colors.blueAccent.shade200
+        "color": Colors.blueAccent.shade200,
+        "subcategories": [
+          "Teeth Whitening",
+          "Dental Cleaning",
+          "Dental Implants",
+          "Braces"
+        ]
       },
       {
-        "icon": Icons.medical_services,
+        "icon": "assets/icons/categories/nails.png",
         "label": "Nails",
-        "color": Colors.purpleAccent.shade200
+        "color": Colors.purpleAccent.shade200,
+        "subcategories": ["Manicure", "Pedicure", "Nail Art", "Nail Extensions"]
       },
       {
-        "icon": Icons.spa,
+        "icon": "assets/icons/categories/body.png",
         "label": "Body",
-        "color": Colors.greenAccent.shade200
-      },
+        "color": Colors.greenAccent.shade200,
+        "subcategories": [
+          "Massage",
+          "Body Scrub",
+          "Body Wrap",
+          "Body Contouring"
+        ]
+      }
     ],
     "subcategories": ["Haircuts", "Hair Color", "Hair Treatments", "Blow Dry"],
     "services": [
@@ -45,7 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
         "location": "89 Academy Street",
         "rating": 4.8,
         "image": "assets/images/home_screen_image.png",
-        "discount": "Save up to 15%"
+        "discount": "Save up to 15%",
+        "subcategories": ["Hair Treatments", "Blow Dry"]
       },
       {
         "title": "Luxury Salon",
@@ -53,13 +84,134 @@ class _HomeScreenState extends State<HomeScreen> {
         "location": "56 Park Avenue",
         "rating": 4.7,
         "image": "assets/images/home_screen_image.png",
-        "discount": "Save up to 10%"
+        "discount": "Save up to 10%",
+        "subcategories": ["Microblading", "Body Contouring"]
+      },
+      {
+        "title": "Elite Hair Studio",
+        "price": "\$18",
+        "location": "23 High Street",
+        "rating": 4.9,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 20%",
+        "subcategories": ["Haircuts", "Hair Color"]
+      },
+      {
+        "title": "Glow Spa",
+        "price": "\$25",
+        "location": "12 Market Road",
+        "rating": 4.6,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 15%",
+        "subcategories": ["Facials", "Waxing"]
+      },
+      {
+        "title": "Polished Nails",
+        "price": "\$15",
+        "location": "34 Elm Street",
+        "rating": 4.8,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 10%",
+        "subcategories": ["Manicure", "Nail Art"]
+      },
+      {
+        "title": "Relax & Renew",
+        "price": "\$30",
+        "location": "78 King Street",
+        "rating": 4.7,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 20%",
+        "subcategories": ["Massage", "Body Scrub"]
+      },
+      {
+        "title": "Pearl Dental Clinic",
+        "price": "\$50",
+        "location": "45 Queen Avenue",
+        "rating": 4.9,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 25%",
+        "subcategories": ["Teeth Whitening", "Dental Cleaning"]
+      },
+      {
+        "title": "Heavenly Touch",
+        "price": "\$35",
+        "location": "99 Sunset Boulevard",
+        "rating": 4.8,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 15%",
+        "subcategories": ["Body Wrap", "Body Contouring"]
+      },
+      {
+        "title": "Chic Beauty Bar",
+        "price": "\$22",
+        "location": "67 Maple Lane",
+        "rating": 4.7,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 10%",
+        "subcategories": ["Eyelash Extensions", "Microblading"]
+      },
+      {
+        "title": "Pure Bliss",
+        "price": "\$28",
+        "location": "88 Cedar Road",
+        "rating": 4.8,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 20%",
+        "subcategories": ["Facials", "Body Scrub"]
+      },
+      {
+        "title": "Urban Glow",
+        "price": "\$40",
+        "location": "11 Greenway Avenue",
+        "rating": 4.9,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 30%",
+        "subcategories": ["Hair Treatments", "Nail Extensions"]
+      },
+      {
+        "title": "Radiant Smile",
+        "price": "\$60",
+        "location": "50 Tower Bridge Road",
+        "rating": 4.8,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 15%",
+        "subcategories": ["Dental Implants", "Braces"]
+      },
+      {
+        "title": "Style & Shine",
+        "price": "\$25",
+        "location": "31 Rosewood Avenue",
+        "rating": 4.6,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 15%",
+        "subcategories": ["Haircuts", "Blow Dry"]
+      },
+      {
+        "title": "Luxe Nails Boutique",
+        "price": "\$20",
+        "location": "29 Orchid Lane",
+        "rating": 4.7,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 10%",
+        "subcategories": ["Pedicure", "Nail Art"]
+      },
+      {
+        "title": "Tranquil Spa",
+        "price": "\$35",
+        "location": "14 Serenity Drive",
+        "rating": 4.8,
+        "image": "assets/images/home_screen_image.png",
+        "discount": "Save up to 20%",
+        "subcategories": ["Massage", "Body Wrap"]
       }
     ]
   };
 
   int selectedCategoryIndex = 0;
+  String selectedCategory = '';
   int selectedSubcategoryIndex = 0;
+  String selectedSubcategory = '';
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -109,8 +261,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.notifications_outlined,
-                              size: 28),
+                          icon: Image.asset(
+                            'assets/icons/system/notification-2.png',
+                            width: 24,
+                            height: 24,
+                          ),
                         ),
                         Positioned(
                           top: 8,
@@ -156,7 +311,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.pink,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Icon(Icons.tune, color: Colors.white),
+                    child: Image.asset(
+                      'assets/icons/system/settings.png',
+                      color: Colors.white,
+                      width: 24,
+                      height: 24,
+                    ),
                   ),
                   const SizedBox(width: 20),
                 ],
@@ -182,25 +342,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () {
                         setState(() {
                           selectedCategoryIndex = isSelected ? -1 : index;
+
+                          // Update subcategories based on the selected category
+                          if (selectedCategoryIndex != -1) {
+                            data['subcategories'] = category['subcategories'];
+                            selectedCategory = category['label'];
+                            selectedSubcategoryIndex = 0;
+                            selectedSubcategory =
+                                data['subcategories'][selectedSubcategoryIndex];
+                          } else {
+                            data['subcategories'] = [];
+                            selectedCategory = '';
+                          }
                         });
                       },
                       child: Column(
                         children: [
                           CircleAvatar(
                               backgroundColor: selectedCategoryIndex == -1
-                                  ? randomPastelColor.withOpacity(0.1)
+                                  ? randomPastelColor.withOpacity(0.2)
                                   : isSelected
                                       ? randomPastelColor
-                                      : randomPastelColor.withOpacity(0.1),
+                                      : randomPastelColor.withOpacity(0.2),
                               radius: 30,
-                              child: Icon(
+                              child: Image.asset(
                                 category['icon'],
-                                size: 20,
+                                width: 24,
+                                height: 24,
                                 color: selectedCategoryIndex == -1
                                     ? randomPastelColor
                                     : isSelected
                                         ? Colors.white
-                                        : randomPastelColor.withOpacity(0.3),
+                                        : randomPastelColor.withOpacity(0.4),
                               )),
                           const SizedBox(height: 10),
                           Text(
@@ -231,6 +404,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () {
                             setState(() {
                               selectedSubcategoryIndex = index;
+                              selectedSubcategory = data['subcategories']
+                                  [selectedSubcategoryIndex];
                             });
                           },
                           child: Chip(
@@ -265,9 +440,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
-                            child: const Text('Services',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold)),
+                            child: const Text(
+                              'Services',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 10),
                           SizedBox(
@@ -275,19 +454,36 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: ListView.builder(
                               padding: const EdgeInsets.only(left: 20),
                               scrollDirection: Axis.horizontal,
-                              itemCount: data['services'].length,
+                              itemCount: data['services']
+                                  .where((service) {
+                                    // Ensure the 'subcategories' key exists and is a list
+                                    return service['subcategories'] is List &&
+                                        service['subcategories']
+                                            .contains(selectedSubcategory);
+                                  })
+                                  .toList()
+                                  .length,
                               itemBuilder: (context, index) {
-                                final service = data['services'][index];
+                                final filteredServices =
+                                    data['services'].where((service) {
+                                  // Ensure that 'subcategories' exists and is a List
+                                  return service['subcategories'] is List &&
+                                      service['subcategories']
+                                          .contains(selectedSubcategory);
+                                }).toList();
+                                final service = filteredServices[index];
                                 return Padding(
                                   padding: const EdgeInsets.only(right: 15),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(12),
                                     child: Stack(
                                       children: [
-                                        Image.asset(service['image'],
-                                            height: 200,
-                                            width: 300,
-                                            fit: BoxFit.cover),
+                                        Image.asset(
+                                          service['image'],
+                                          height: 200,
+                                          width: 300,
+                                          fit: BoxFit.cover,
+                                        ),
                                         Positioned(
                                           top: 10,
                                           left: 10,
@@ -295,15 +491,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 8, vertical: 4),
                                             decoration: BoxDecoration(
-                                              color: Colors.red,
+                                              color: Colors.white70,
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                             ),
                                             child: Text(
                                               service['discount'],
                                               style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 12),
+                                                color: Colors.red,
+                                                fontSize: 12,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -320,14 +517,89 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                             child: Row(
                                               children: [
-                                                const Icon(Icons.star,
-                                                    color: Colors.yellow,
-                                                    size: 16),
+                                                const Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow,
+                                                  size: 16,
+                                                ),
                                                 Text(
-                                                    service['rating']
-                                                        .toString(),
-                                                    style: const TextStyle(
-                                                        color: Colors.white)),
+                                                  service['rating'].toString(),
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 1,
+                                          child: Container(
+                                            width:
+                                                300, // Full width of the image
+                                            color: Colors.white,
+                                            padding: const EdgeInsets.all(8),
+                                            child: Column(
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    // Service name
+                                                    Text(
+                                                      service['title'],
+                                                      style: const TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                    // Service price
+                                                    Text(
+                                                      'From ${service['price']}',
+                                                      style: const TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.green,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        const Icon(
+                                                          Icons.location_on,
+                                                          size: 16,
+                                                          color: Colors.grey,
+                                                        ),
+                                                        const SizedBox(
+                                                            width: 4),
+                                                        Text(
+                                                          service['location'],
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 12,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Text(
+                                                      'Reviews (12)',
+                                                      style: const TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ],
                                             ),
                                           ),
@@ -343,114 +615,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Container(),
               ),
-
-              // Section Title
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Text('Popular Services',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text('See All',
-                        style: TextStyle(color: Colors.grey[600])),
-                  )
-                ],
-              ),
-              const SizedBox(height: 10),
-
-              // Service Cards (Horizontal Scroll)
-              SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: data['services'].length,
-                  itemBuilder: (context, index) {
-                    final service = data['services'][index];
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Stack(
-                          children: [
-                            Image.asset(service['image'],
-                                height: 200, width: 300, fit: BoxFit.cover),
-                            Positioned(
-                              top: 10,
-                              left: 10,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  service['discount'],
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 12),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              top: 10,
-                              right: 10,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: Colors.black54,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(Icons.star,
-                                        color: Colors.yellow, size: 16),
-                                    Text(service['rating'].toString(),
-                                        style: const TextStyle(
-                                            color: Colors.white)),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 20),
-
-              // Bottom Navigation Bar
-              BottomNavigationBar(
-                type: BottomNavigationBarType.shifting,
-                currentIndex: 0,
-                backgroundColor: Colors.white,
-                selectedItemColor: Colors.pink,
-                unselectedItemColor: Colors.grey,
-                onTap: (index) {
-                  setState(() {
-                    var _selectedTab = index;
-                  });
-                },
-                items: const [
-                  BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.calendar_today), label: ''),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.favorite_border), label: ''),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.person_outline), label: ''),
-                ],
-              ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigation(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
