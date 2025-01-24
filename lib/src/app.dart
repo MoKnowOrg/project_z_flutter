@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
               routes: {
                 SettingsView.routeName: (context) => SettingsView(controller: settingsController),
                 Detail.routeName: (context) => Detail(),
-                Home.routeName: (context) => settingsController.onboardingCompleted ? Home() : OnboardingScreen(settingsController: settingsController),
+                HomeScreen.routeName: (context) => settingsController.onboardingCompleted ? HomeScreen() : OnboardingScreen(settingsController: settingsController),
               },
             ),
           )
